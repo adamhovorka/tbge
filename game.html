@@ -36,6 +36,7 @@
 		<!-- Stylesheets -->
 		<link rel="stylesheet" href="css/ui.css" />
 		<link rel="stylesheet" href="css/game.css" />
+		<link rel="stylesheet" href="css/demo.css" />
 
 		<!-- Javascript - Libraries -->
 		<script src="js/jquery.js"></script>
@@ -43,10 +44,21 @@
 
 		<!-- Javascript - The stuff that actually does stuff... -->
 		<script src="js/game.js"></script>
+
+		<script>
+			$(function() {
+				$("#game").game({
+					height: 8,
+					width: 12,
+					sprites: "images/demo-sprites.png"
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div id="main">
-			<h1>Tile Based Game Engine</h1>
+			<h1>Tile Based Game Engine<hr /></h1>
+			<div id="game"></div>
 		</div>
 	</body>
 </html>

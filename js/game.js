@@ -43,12 +43,12 @@
 
 			// Initialization method - Initializes a game surface.
 			init: function(options) {
-
+				this.html("I'm a game surface!");
 			}
 
 		};
 
-		// Method calling logic
+		// Method calling logic ====----
 		if ( gamemethods[method] ) {
 			return gamemethods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
 		} else if ( typeof method === 'object' || ! method ) {
