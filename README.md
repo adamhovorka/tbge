@@ -19,4 +19,4 @@ The background image for the demo page is from [Premium Pixels][premium].
 
 If you recognize where the demo sprites are from, I commend you.
 
-[premium]: www.premiumpixels.com/freebies/
+[premium]: http://www.premiumpixels.com/
