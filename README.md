@@ -15,6 +15,8 @@ features of the engine.
 Credits
 -------
 
-The background image for the demo page is from <www.premiumpixels.com/freebies/>
+The background image for the demo page is from [Premium Pixels][premium].
 
 If you recognize where the demo sprites are from, I commend you.
+
+[premium]: www.premiumpixels.com/freebies/
