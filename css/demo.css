@@ -1,4 +1,5 @@
-body { background-image: url(../images/dnbg.jpg); padding: 2em 5em; font-family: Helvetica, Arial, sans-serif; }
+body { background-color: #ccc; padding: 0; margin: 0; font-family: Helvetica, Arial, sans-serif; }
 h1 { font-family: "Press Start 2P", monospace; font-size: 2em; text-align: center; color: #ddd; text-shadow: 0px 2px 2px #000; line-height: 0.5em; }
-hr { border: 1px inset #666; }
+hr { border: 1px inset #666; margin-bottom: 1.5em; }
 #gameborder { margin: auto; width: 384px; padding: 16px; background-color: #111; border-radius: 16px; }
+#top { width: auto; background-image: url(../images/dnbg.jpg); padding: 3em 5em; border-bottom: 4px groove #666; margin-bottom: 3em; }
