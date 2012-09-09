@@ -5,7 +5,6 @@ Tile Based Game Engine
 Introduction
 ------------
 
-12345678901234567890123456789012345678901234567890123456789012345678901234567890
 Tile Based Game Engine  is a project  by UCAS students,  headed by Adam Hovorka,
 to create an RPG-like tile-based game engine in JavaScript/jQuery.
 
@@ -18,4 +17,4 @@ Credits
 
 The background image for the demo page is from <www.premiumpixels.com/freebies/>
 
-If you recognizze where the demo sprites are from, I commend you.
+If you recognize where the demo sprites are from, I commend you.
