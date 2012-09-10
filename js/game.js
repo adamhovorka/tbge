@@ -167,7 +167,30 @@
 						// Load the specific sprite's data from "sprites"
 						var sprite = sprites.id;
 
+						// Update the sprite
 						$("#sprite" + id).css("background-position", "0 -" + (settings.resolution * image) + "px")
+
+						// Update the image in memory
+						options.image = image;
+						this.data("options", image);
+					},
+
+					// Move method - Move the sprite around
+					// NOTE! Coordinates are relative to SCREEN NOT MAP
+					move: function(id, spritex, spritey){
+
+						// Load settings and sprites from data
+						var settings = this.data("settings");
+						var sprites = this.data("sprites");
+
+						// Load the specific sprite's data from "sprites"
+						var sprite = sprites.id;
+
+						// Update the sprite
+						$("#sprite" + id).css({
+							top: this.offset().top + (settings.resolution * spritey) + "px",
+							left: this.offset().left + ((this.width() - (settings.resolution * settings.width)) / 2) + (settings.resolution * spritex) + "px"
+						});
 					}
 				};
 

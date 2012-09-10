@@ -78,6 +78,7 @@ $(function() {
 		sprites: "images/demo-player.png"
 	});
 
+
 	// Test onClick event for the "A" button ====----
 	$("#abutton").click(function(){ alert("You clicked button A!")});
 
