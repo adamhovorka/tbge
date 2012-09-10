@@ -17,6 +17,7 @@ Credits
 
 The background image for the demo page is from [Premium Pixels][premium].
 
-If you recognize where the demo sprites are from, I commend you.
+The demo sprites are from the TI-83+ / TI-84+ version of [BBC BASIC][sprites].
 
 [premium]: http://www.premiumpixels.com/
+[sprites]: http://www.benryves.com/products/bbcbasic
