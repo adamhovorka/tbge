@@ -29,3 +29,5 @@
  *  to modify the style for a particular story, you should put your custom style
  *  in a separate file - story.css or the like.
  */
+
+.game-sprite { position: absolute; }

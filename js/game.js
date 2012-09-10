@@ -54,6 +54,10 @@
 				}, options);
 				this.data("settings", settings);
 
+				// Initialize a blank map and sprites array
+				this.data("map", {});
+				this.data("sprites", []);
+
 				// Create the game surface.
 				for (i=0; i<settings.height; i++)
 				{
@@ -116,6 +120,67 @@
 					}
 				}
 
+			},
+
+			// Sprite method - Controls sprites.
+			sprite: function(method) {
+
+				// Sprite method object
+				var spritemethods = {
+
+					// Create method - Makes a new sprite
+					create: function(options){
+
+						// Load settings and sprites from data
+						var settings = this.data("settings");
+						var sprites = this.data("sprites");
+
+						// Create the sprite div
+						var id = "sprite" + sprites.length;
+						this.append("<div class='game-sprite' id='" + id + "'></div>");
+						$("#" + id).css({
+							"top": this.offset().top + (settings.resolution * options.y) + "px",
+							"left": this.offset().left + ((this.width() - (settings.resolution * settings.width)) / 2) + (settings.resolution * options.x) + "px",
+							"height": settings.resolution + "px",
+							"width": settings.resolution + "px"
+						});
+
+						// Set the background
+						$("#" + id).css("background-image", "url(" + options.sprites + ")");
+						$("#" + id).css("background-position", "0 -" + (settings.resolution * options.image) + "px");
+
+						// Add sprite information onto "sprites"
+						sprites.push(options);
+
+						// Return the id
+						return id;
+					},
+
+					// Image method - Change which sprite is shown
+					// Used to make players face another direction, etc.
+					image: function(id, image){
+
+						// Load settings and sprites from data
+						var settings = this.data("settings");
+						var sprites = this.data("sprites");
+
+						// Load the specific sprite's data from "sprites"
+						var sprite = sprites.id;
+
+						$("#sprite" + id).css("background-position", "0 -" + (settings.resolution * image) + "px")
+					}
+				};
+
+				// Method calling logic ==--
+				if ( spritemethods[method] ) {
+					return spritemethods[ method ].apply( this,
+						Array.prototype.slice.call( arguments, 1 ));
+				} else if ( typeof method === 'object' || ! method ) {
+					return spritemethods.create.apply( this, arguments );
+				} else {
+					$.error( 'Method ' +  method +
+						' does not exist on jQuery.game.sprite' );
+				}
 			}
 
 		};

@@ -47,7 +47,7 @@ $(function() {
 		[3, 0, 3, 8, 9,10, 0,14,14, 4, 0, 0, 0, 0, 0, 4],
 		[3, 0, 3, 5, 6, 7, 0,14,14, 4, 0, 0, 0, 0, 0, 4],
 		[3, 0, 3, 0, 0, 0, 0,14,14, 4, 0, 0, 0, 0, 0, 4],
-		[3, 0, 3, 0, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4],
+		[3, 0, 3, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4],
 		[3, 0, 2, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 4],
 		[3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4],
 		[3, 0, 0, 0, 0, 0, 0, 0, 0, 0,16,17,17,17,18, 4],
@@ -69,8 +69,14 @@ $(function() {
 	var camera = {x: 0, y: 3};
 	$("body").data("camera", camera);
 
-	// Pan to (4, 5) ====----
+	// Pan to camera position ====----
 	$("#game").game("pan", camera.x, camera.y);
+
+	// Create a player sprite at (4, 8) ====----
+	$("#game").game("sprite", "create", {
+		x: 4, y: 5, image: 0,
+		sprites: "images/demo-player.png"
+	});
 
 	// Test onClick event for the "A" button ====----
 	$("#abutton").click(function(){ alert("You clicked button A!")});
@@ -94,6 +100,8 @@ $(function() {
 					camera.y--;
 					$("#game").game("pan", camera.x, camera.y);
 				}
+
+				$("#game").game("sprite", "image", 0, 2);
 			} else if ((y >= 78) && (y <= 118)) {
 				// DOWN ==--
 				if (camera.y < 8)
@@ -101,6 +109,8 @@ $(function() {
 					camera.y++;
 					$("#game").game("pan", camera.x, camera.y);
 				}
+
+				$("#game").game("sprite", "image", 0, 0);
 			}
 		} else if ((y >= 50) && (y <= 78)) {
 			if ((x >= 10) && (x <= 50))
@@ -111,6 +121,8 @@ $(function() {
 					camera.x--;
 					$("#game").game("pan", camera.x, camera.y);
 				}
+
+				$("#game").game("sprite", "image", 0, 3);
 			} else if ((x >= 78) && (x <= 118)) {
 				// RIGHT ==--
 				if (camera.x < 4)
@@ -118,6 +130,8 @@ $(function() {
 					camera.x++;
 					$("#game").game("pan", camera.x, camera.y);
 				}
+
+				$("#game").game("sprite", "image", 0, 1);
 			}
 		}
 
