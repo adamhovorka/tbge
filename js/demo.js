@@ -40,14 +40,14 @@ $(function() {
 
 	var map = [
 		[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-		[3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4],
+		[3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4],
 		[3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4],
 		[3, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 4],
 		[3, 0, 3,11,12,13, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4],
 		[3, 0, 3, 8, 9,10, 0,14,14, 4, 0, 0, 0, 0, 0, 4],
 		[3, 0, 3, 5, 6, 7, 0,14,14, 4, 0, 0, 0, 0, 0, 4],
 		[3, 0, 3, 0, 0, 0, 0,14,14, 4, 0, 0, 0, 0, 0, 4],
-		[3, 0, 3, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4],
+		[3, 0, 3, 0, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4],
 		[3, 0, 2, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 4],
 		[3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4],
 		[3, 0, 0, 0, 0, 0, 0, 0, 0, 0,16,17,17,17,18, 4],
@@ -66,10 +66,37 @@ $(function() {
 	});
 
 	// Pan to (4, 5) ====----
-	$("#game").game("pan", 4, 5);
+	$("#game").game("pan", 0, 3);
 
 	// Test onClick event for the "A" button ====----
-	$("#abutton").click(function(){
-		alert("You clicked button A!");
+	$("#abutton").click(function(){ alert("You clicked button A!")});
+
+	// Test onClick event for the "B" button ====----
+	$("#abutton").click(function(){ alert("You clicked button B!")});
+
+	// Test onClick event for the D+Pad ====----
+	$("#dpad").click(function(event){
+		var x = Math.round(event.pageX - $(this).offset().left);
+		var y = Math.round(event.pageY - $(this).offset().top);
+		if ((x >= 50) && (x <= 78))
+		{
+			if ((y >= 10) && (y <= 50))
+			{
+				// UP ==--
+				alert("UP");
+			} else if ((y >= 78) && (y <= 118)) {
+				// DOWN ==--
+				alert("DOWN");
+			}
+		} else if ((y >= 50) && (y <= 78)) {
+			if ((x >= 10) && (x <= 50))
+			{
+				// LEFT ==--
+				alert("LEFT");
+			} else if ((x >= 78) && (x <= 118)) {
+				// RIGHT ==--
+				alert("RIGHT");
+			}
+		}
 	});
 });
