@@ -65,8 +65,12 @@ $(function() {
 		data: map 
 	});
 
+	// Initialize the camera variable ====----
+	var camera = {x: 0, y: 3};
+	$("body").data("camera", camera);
+
 	// Pan to (4, 5) ====----
-	$("#game").game("pan", 0, 3);
+	$("#game").game("pan", camera.x, camera.y);
 
 	// Test onClick event for the "A" button ====----
 	$("#abutton").click(function(){ alert("You clicked button A!")});
@@ -74,29 +78,49 @@ $(function() {
 	// Test onClick event for the "B" button ====----
 	$("#abutton").click(function(){ alert("You clicked button B!")});
 
-	// Test onClick event for the D+Pad ====----
+	// Camera motion onClick event for the D+Pad ====----
 	$("#dpad").click(function(event){
 		var x = Math.round(event.pageX - $(this).offset().left);
 		var y = Math.round(event.pageY - $(this).offset().top);
+		var camera = $("body").data("camera");
+
 		if ((x >= 50) && (x <= 78))
 		{
 			if ((y >= 10) && (y <= 50))
 			{
 				// UP ==--
-				alert("UP");
+				if (camera.y > 0)
+				{
+					camera.y--;
+					$("#game").game("pan", camera.x, camera.y);
+				}
 			} else if ((y >= 78) && (y <= 118)) {
 				// DOWN ==--
-				alert("DOWN");
+				if (camera.y < 8)
+				{
+					camera.y++;
+					$("#game").game("pan", camera.x, camera.y);
+				}
 			}
 		} else if ((y >= 50) && (y <= 78)) {
 			if ((x >= 10) && (x <= 50))
 			{
 				// LEFT ==--
-				alert("LEFT");
+				if (camera.x > 0)
+				{
+					camera.x--;
+					$("#game").game("pan", camera.x, camera.y);
+				}
 			} else if ((x >= 78) && (x <= 118)) {
 				// RIGHT ==--
-				alert("RIGHT");
+				if (camera.x < 4)
+				{
+					camera.x++;
+					$("#game").game("pan", camera.x, camera.y);
+				}
 			}
 		}
+
+		$("body").data("camera", camera);
 	});
 });
