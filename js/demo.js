@@ -61,6 +61,15 @@ $(function() {
 	$("#game").game("map", {
 		height: 16,
 		width: 16,
+		x: 0, y: 0,
 		data: map 
+	});
+
+	// Pan to (4, 5) ====----
+	$("#game").game("pan", 4, 5);
+
+	// Test onClick event for the "A" button ====----
+	$("#abutton").click(function(){
+		alert("You clicked button A!");
 	});
 });

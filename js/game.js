@@ -89,13 +89,33 @@
 				this.data("map", data);
 				var map = data.data;
 
+				// Iterate over the map and update sprites.
 				for (y=0; y<settings.height; y++)
 				{
 					for (x=0; x<settings.width; x++)
 					{
-						this.children("#" + y).children("#" + x).css("background-position", "0px -" + (settings.resolution * map[y][x]) + "px");
+						this.children("#" + y).children("#" + x).css("background-position", "0px -" + (settings.resolution * map[y + data.y][x + data.x]) + "px");
 					}
 				}
+			},
+
+			// Pan method - Moves the map around.
+			pan: function(camerax, cameray) {
+
+				// Load the settings and map from storage.
+				var settings = this.data("settings");
+				var data = this.data("map");
+				var map = data.data;
+
+				// Iterate over the map and update sprites.
+				for (y=0; y<settings.height; y++)
+				{
+					for (x=0; x<settings.width; x++)
+					{
+						this.children("#" + y).children("#" + x).css("background-position", "0px -" + (settings.resolution * map[y + cameray][x + camerax]) + "px");
+					}
+				}
+
 			}
 
 		};
