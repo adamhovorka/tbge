@@ -69,12 +69,18 @@ $(function() {
 	var camera = {x: 0, y: 3};
 	$("body").data("camera", camera);
 
+	// Initialize the player position variables ====----
+	var player = {f: 0, x: 4, y: 8};
+	player.u = player.x - camera.x;
+	player.v = player.y - camera.y;
+	$("body").data("player", player);
+
 	// Pan to camera position ====----
 	$("#game").game("pan", camera.x, camera.y);
 
 	// Create a player sprite at (4, 8) ====----
 	$("#game").game("sprite", "create", {
-		x: 4, y: 5, image: 0,
+		x: player.u, y: player.v, image: player.f,
 		sprites: "images/demo-player.png"
 	});
 

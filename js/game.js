@@ -25,8 +25,8 @@
  *  IN THE SOFTWARE.
  *
  *
- *  This file is the  jQuery plugin that implements various game features;  tile
- *  rendering, interactive dialog creation functions, etc. all go in here.
+ *  This file implements  raw interaction functions  --  drawing a map,  drawing
+ *  sprites, drawing dialogs, etc.
  *
  *  This is *NOT* the place to put  anything story-related.  If you're writing a
  *  story module, it goes in a separate file - story.js or the like.
@@ -151,6 +151,7 @@
 
 						// Add sprite information onto "sprites"
 						sprites.push(options);
+						this.data("sprites", sprites);
 
 						// Return the id
 						return id;
@@ -164,15 +165,12 @@
 						var settings = this.data("settings");
 						var sprites = this.data("sprites");
 
-						// Load the specific sprite's data from "sprites"
-						var sprite = sprites.id;
-
 						// Update the sprite
 						$("#sprite" + id).css("background-position", "0 -" + (settings.resolution * image) + "px")
 
 						// Update the image in memory
-						options.image = image;
-						this.data("options", image);
+						sprites[id].image = image;
+						this.data("sprites", sprites);
 					},
 
 					// Move method - Move the sprite around
@@ -183,14 +181,16 @@
 						var settings = this.data("settings");
 						var sprites = this.data("sprites");
 
-						// Load the specific sprite's data from "sprites"
-						var sprite = sprites.id;
-
 						// Update the sprite
 						$("#sprite" + id).css({
 							top: this.offset().top + (settings.resolution * spritey) + "px",
 							left: this.offset().left + ((this.width() - (settings.resolution * settings.width)) / 2) + (settings.resolution * spritex) + "px"
 						});
+
+						// Update the sprite in memory
+						sprites[id].x = spritex;
+						sprites[id].y = spritey;
+						this.data("sprites", sprites);
 					}
 				};
 
