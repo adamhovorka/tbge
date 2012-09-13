@@ -37,7 +37,7 @@
 ( function($) {
 
 	// Player function - Implements mid-level player controls ====----
-	$.fn.player = function(method {
+	$.fn.player = function(method) {
 
 		// Player method object ====----
 		var playermethods = {
