@@ -31,6 +31,10 @@ h3 {
 	margin-bottom: 0.5em;
 }
 
+p {
+	line-height: 1.5em;
+}
+
 #top hr {
 	border: 1px inset #666;
 	margin-bottom: 1.5em;
