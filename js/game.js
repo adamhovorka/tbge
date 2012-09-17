@@ -86,20 +86,29 @@
 			// Map method - Loads a new map into the game surface.
 			map: function(data) {
 
-				// Load the settings from storage.
-				var settings = this.data("settings");
-
-				// Store the map data.
-				this.data("map", data);
-				var map = data.data;
-
-				// Iterate over the map and update sprites.
-				for (y=0; y<settings.height; y++)
+				if (data != null)
 				{
-					for (x=0; x<settings.width; x++)
+
+					// Load the settings from storage.
+					var settings = this.data("settings");
+
+					// Store the map data.
+					this.data("map", data);
+					var map = data.data;
+
+					// Iterate over the map and update sprites.
+					for (y=0; y<settings.height; y++)
 					{
-						this.children("#" + y).children("#" + x).css("background-position", "0px -" + (settings.resolution * map[y + data.y][x + data.x]) + "px");
+						for (x=0; x<settings.width; x++)
+						{
+							this.children("#" + y).children("#" + x).css("background-position", "0px -" + (settings.resolution * map[y + data.y][x + data.x]) + "px");
+						}
 					}
+
+				} else {
+
+					return this.data("map");
+
 				}
 			},
 
@@ -191,6 +200,25 @@
 						sprites[id].x = spritex;
 						sprites[id].y = spritey;
 						this.data("sprites", sprites);
+					},
+
+					// Redraw method - move the sprites back to the right
+					// position after window resize
+					// NOTE! Don't use this for anything BUT window resize
+					redraw: function(){
+
+						// Load settings and sprites from data
+						var settings = this.data("settings");
+						var sprites = this.data("sprites");
+
+						// Iterate over the sprites list
+						for (id in sprites) {
+
+							// Update the sprite
+							$("#sprite" + id).css({
+								left: this.offset().left + ((this.width() - (settings.resolution * settings.width)) / 2) + (settings.resolution * sprites[id].x) + "px"
+							});
+						}
 					}
 				};
 

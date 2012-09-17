@@ -89,7 +89,7 @@ $(function() {
 	$("#abutton").click(function(){ alert("You clicked button A!")});
 
 	// Test onClick event for the "B" button ====----
-	$("#abutton").click(function(){ alert("You clicked button B!")});
+	$("#bbutton").click(function(){ alert("You clicked button B!")});
 
 	// Camera motion onClick event for the D+Pad ====----
 	$("#dpad").click(function(event){
@@ -144,4 +144,8 @@ $(function() {
 
 		$("body").data("camera", camera);
 	});
+});
+
+$(window).resize(function() {
+	$("#game").game("sprite", "redraw");
 });
