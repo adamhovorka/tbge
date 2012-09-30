@@ -216,6 +216,7 @@
 
 							// Update the sprite
 							$("#sprite" + id).css({
+								top: this.offset().top + (settings.resolution * sprites[id].y) + "px",
 								left: this.offset().left + ((this.width() - (settings.resolution * settings.width)) / 2) + (settings.resolution * sprites[id].x) + "px"
 							});
 						}
