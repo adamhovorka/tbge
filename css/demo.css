@@ -72,6 +72,7 @@ p {
 	padding: 16px;
 	background-color: #111;
 	border-radius: 16px;
+	box-shadow: 3px 3px 2px #000;
 }
 
 #top {
