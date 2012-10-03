@@ -50,7 +50,9 @@ $(function() {
 	$("#menu > #content > #new.button").click(function(){
 		$(this).css("background-color", "#222");
 		$("#modal").show();
-		$("#new.dialog").css({top: parseInt($("#menu").css("top")) + 25 + "px", left: (($("#menu").width() - $("#new.dialog").width()) / 4) + parseInt($("#menu").css("left").slice(0, -2)) + "px"});
+		$("#new.dialog").css({top: parseInt($("#menu").css("top")) + 25 + "px",
+			left: (($("#menu").width() - $("#new.dialog").width()) / 4)
+			+ parseInt($("#menu").css("left").slice(0, -2)) + "px"});
 		$("#new.dialog").show();
 	});
 
@@ -72,13 +74,18 @@ $(function() {
 	$("#new.dialog").append("<div id='content'></div>");
 	$("#new.dialog > #content").append("<h1>New File</h1><hr />");
 	$("#new.dialog > #content").append("<div class='top button' id='tile'>Tile Set</div>");
+	$("#new.dialog > #content").append("<div class='button' id='sprite'>Sprite</div>");
 	$("#new.dialog > #content").append("<div class='button' id='map'>Map</div>");
 	$("#new.dialog > #content").append("<div class='bottom button' id='cancel'>Cancel</div>");
 	$("#new.dialog").hide();
 
         // "New" dialog buttons ===---
-	$("#new.dialog > #content > #tile.button").click(function(){alert("Not implemented.")});
-	$("#new.dialog > #content > #map.button").click(function(){alert("Not implemented.")});
+	$("#new.dialog > #content > #tile.button").click(function(){
+		$("#new.dialog").hide(); $("#tiles-new.dialog").show();
+		$("#tiles-new.dialog").css({top: (($(window).height() - $("#tiles-new.dialog").height()) / 2)
+			+ "px", left: (($(window).width() - $("#tiles-new.dialog").width()) / 2) + "px"});});
+	$("#new.dialog > #content > #sprite.button").click(function(){alert("Not implemented.");});
+	$("#new.dialog > #content > #map.button").click(function(){alert("Not implemented.");});
 	$("#new.dialog > #content > #cancel.button").click(function(){$("#new.dialog").hide(); $("#modal").hide();});
 
 
@@ -86,6 +93,8 @@ $(function() {
 	$(".dialog").draggable({cancel: "#content"});
 
 	// This is the only style-related stuff in the whole JavaScript file.
-	$(".button").hover(function(){ $(this).css("background-color", "#335");
+	$(".button:not(.readout)").hover(function(){ $(this).css("background-color", "#335");
 	}, function(){ $(this).css("background-color", "#222");});
+	$(".radio").hover(function(){ $(this).css("background-color", "#335");
+	}, function(){ if (!($(this).hasClass("on"))) {$(this).css("background-color", "#222");}});
 });
