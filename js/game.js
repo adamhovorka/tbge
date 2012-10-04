@@ -233,6 +233,13 @@
 					$.error( 'Method ' +  method +
 						' does not exist on jQuery.game.sprite' );
 				}
+			},
+
+			click: function(callback){
+				this.data("click", callback);
+				this.children().children().click(function(){
+					$(this).parent().parent().data("click")($(this).attr("id"), $(this).parent().attr("id"));
+				});
 			}
 
 		};

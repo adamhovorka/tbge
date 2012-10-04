@@ -84,6 +84,9 @@ $(function() {
 		sprites: "images/demo-player.png"
 	});
 
+	// Demo click function ====----
+	$("#game").game("click", function(x, y){alert("You clicked at (" + x + ", " + y + ").");});
+
 
 	// Test onClick event for the "A" button ====----
 	$("#abutton").click(function(){ alert("You clicked button A!")});
