@@ -1,0 +1,118 @@
+body {
+	background-color: #bbb;
+	padding: 0;
+	margin: 0;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	font-family: "Press Start 2P", monospace;
+	font-size: 2em;
+	text-align: center;
+	color: #ddd;
+	text-shadow: 0px 2px 2px #000;
+	line-height: 0.5em;
+}
+
+h2 {
+	font-family: "Georgia", serif;
+	font-size: 1.75em;
+	color: #111;
+	text-shadow: 0px 1px 1px #eee;
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+h3 {
+	font-family: "Georgia", serif;
+	font-size: 1.35em;
+	color: #111;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+#top hr {
+	border: 1px inset #666;
+	margin-bottom: 1.5em;
+}
+
+#content hr {
+	border: 1px inset #aaa;
+}
+
+#content-nav {
+	float: left;
+	margin-right: 2em;
+	margin-bottom: 1em;
+	background-color: #333;
+	background-image: url(../images/dnbg.jpg);
+	border-radius: 8px;
+	width: 5em;
+	padding: 0.5em 1em;
+	color: #ddd;
+	text-align: center;
+	border: 1px outset #666;
+}
+
+#content-nav hr {
+	border: 1px inset #666;
+}
+
+#content-nav a {
+	margin: 0 1em;
+}
+
+#gameborder {
+	margin: auto;
+	width: 736px;
+	padding: 16px;
+	background-color: #111;
+	border-radius: 16px;
+	box-shadow: 3px 3px 2px #000;
+}
+
+#top {
+	width: auto;
+	background-image: url(../images/dnbg.jpg);
+	padding: 3em 5em;
+	border-bottom: 4px groove #666;
+}
+
+#content {
+	padding: 3em 8em;
+}
+
+#dpad {
+	background-image: url(../images/controls.png);
+	height: 128px;
+	width: 128px;
+	margin: 64px 32px 64px 16px;
+	float: left;
+}
+
+#abbox {
+	height: 128px;
+	width: 128px;
+	margin: 64px 16px 64px 32px;
+	float: right;
+}
+
+#abutton {
+	background-image: url(../images/controls.png);
+	height: 64px;
+	width: 64px;
+	margin-left: 64px;
+	background-position: 0 -128px;
+}
+
+#bbutton {
+	background-image: url(../images/controls.png);
+	height: 64px;
+	width: 64px;
+	margin-right: 64px;
+	background-position: -64px -128px;
+}
