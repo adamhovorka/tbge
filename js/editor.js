@@ -36,7 +36,7 @@ $(function() {
 	$("#modal").hide();
 
 	// Initialize the menu ====----
-	$("body").append("<div class='draggable' id='menu'></div>");
+	$("body").append("<div class='window' id='menu'></div>");
 	$("#menu").append("<div id='content'></div>");//.css("display", "inline-block");
 	$("#menu > #content").append("<h1>Tile Based<br />Game Engine<hr />editor.html</h1><hr />");
 	$("#menu > #content").append("<div class='top button' id='new'>New</div>");
@@ -89,7 +89,7 @@ $(function() {
 	$("#new.dialog > #content > #cancel.button").click(function(){$("#new.dialog").hide(); $("#modal").hide();});
 
 
-	$(".draggable").draggable({cancel: "#content"});
+	$(".window").draggable({cancel: "#content"});
 	$(".dialog").draggable({cancel: "#content"});
 
 	// This is the only style-related stuff in the whole JavaScript file.

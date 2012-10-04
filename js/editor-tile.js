@@ -52,22 +52,15 @@ $(function() {
 
 
         // "New" dialog buttons ===---
-	$("#tiles-new.dialog > #content > #8.radio").click(function(){
+	$("#tiles-new.dialog > #content > .radio").click(function(){
 		if (!($(this).hasClass("on"))){
-			$(this).parent().children(".radio").removeClass("on").css("background-color", "#222");
-			$(this).addClass("on").css("background-color", "#335")}});
-	$("#tiles-new.dialog > #content > #16.radio").click(function(){
-		if (!($(this).hasClass("on"))){
-			$(this).parent().children(".radio").removeClass("on").css("background-color", "#222");
-			$(this).addClass("on").css("background-color", "#335")}});
-	$("#tiles-new.dialog > #content > #32.radio").click(function(){
-		if (!($(this).hasClass("on"))){
-			$(this).parent().children(".radio").removeClass("on").css("background-color", "#222");
-			$(this).addClass("on").css("background-color", "#335")}});
+		// There's some style-related stuff on the next two lines.
+		$(this).parent().children(".radio").removeClass("on").css("background-color", "#222");
+		$(this).addClass("on").css("background-color", "#335")}});
 
 	$("#tiles-new.dialog > #content > #tilenum.button").data("value", 1);
 	// TODO Make a text input ==--
-	//$("#tiles-new.dialog > #content > #Tilenum.button").click(function(){
+	//$("#tiles-new.dialog > #content > #tilenum.button").click(function(){
 	//	$("#tiles-new.dialog > #content").append("<input type='text' class='text' id='value'/>");});
 	$("#tiles-new.dialog > #content > #add.button").click(function(){
 		var val = $("#tiles-new.dialog > #content > #tilenum.button");
