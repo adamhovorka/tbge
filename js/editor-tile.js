@@ -71,7 +71,14 @@ $(function() {
 		var value = val.data("value") - 1;
 		if (value != 0) {val.data("value", value).html(value)}});
 
-	$("#tiles-new.dialog > #content > #go.button").click(function(){$("#tiles-new.dialog").hide(); $("#modal").hide();});
+	$("#tiles-new.dialog > #content > #go.button").click(function(){
+		var res = 0;
+		if ($("#tiles-new.dialog > #content > #8.radio").hasClass("on")) { res = 8 }
+		if ($("#tiles-new.dialog > #content > #16.radio").hasClass("on")) { res = 16 }
+		if ($("#tiles-new.dialog > #content > #32.radio").hasClass("on")) { res = 32 }
+		$("body").data("file", { type: "tileset",
+			resolution: res});
+		$("#tiles-new.dialog").hide(); $("#modal").hide();});
 
 
 	// "open" function ====----

@@ -41,7 +41,8 @@ $(function() {
 	$("#menu > #content").append("<h1>Tile Based<br />Game Engine<hr />editor.html</h1><hr />");
 	$("#menu > #content").append("<div class='top button' id='new'>New</div>");
 	$("#menu > #content").append("<div class='button' id='open'>Open</div>");
-	$("#menu > #content").append("<div class='bottom button' id='save'>Save</div>");
+	$("#menu > #content").append("<div class='button' id='save'>Save</div>");
+	$("#menu > #content").append("<div class='bottom button' id='export'>Export</div>");
 	$("#menu > #content").append("<hr class='separator' />");
 	$("#menu > #content").append("<div class='top button' id='help'>Help</div>");
 	$("#menu > #content").append("<div class='bottom button' id='about'>About</div>");
@@ -60,7 +61,12 @@ $(function() {
 	$("#menu > #content > #open.button").click(function(){alert("Not implemented")});
 
 	// "Save" button ===---
-	$("#menu > #content > #save.button").click(function(){alert("Not implemented")});
+	$("#menu > #content > #save.button").click(function(){
+		if ($("body").data("file")) { alert(JSON.stringify($("body").data("file")));
+		} else { alert("No file!"); }});
+
+	// "Export" button ===---
+	$("#menu > #content > #export.button").click(function(){alert("Not implemented")});
 
 	// "Help" button ===---
 	$("#menu > #content > #help.button").click(function(){alert("Not implemented")});
