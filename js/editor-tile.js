@@ -74,11 +74,16 @@ $(function() {
 	$("#tiles-new.dialog > #content > #go.button").click(function(){$("#tiles-new.dialog").hide(); $("#modal").hide();});
 
 
-	// "Show" function ====----
+	// "open" function ====----
 	$("#tiles-new.dialog").data("open", function(){
 		$("#tiles-new.dialog").show();
 		$("#tiles-new.dialog").css({top: (($(window).height() - $("#tiles-new.dialog").height()) / 2)
 			+ "px", left: (($(window).width() - $("#tiles-new.dialog").width()) / 2) + "px"});
-		$("#tiles-new.dialog > #content > #tilenum.button").data("value", 1).html("1");
+		//$("#tiles-new.dialog > #content > #tilenum.button").data("value", 1).html("1");
+	});
+
+	// "Exit" function ====----
+	$("#tiles-new.dialog").data("exit", function(){
+		//Meh.
 	});
 });

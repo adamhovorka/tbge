@@ -81,9 +81,8 @@ $(function() {
 
         // "New" dialog buttons ===---
 	$("#new.dialog > #content > #tile.button").click(function(){
-		$("#new.dialog").hide(); $("#tiles-new.dialog").show();
-		$("#tiles-new.dialog").css({top: (($(window).height() - $("#tiles-new.dialog").height()) / 2)
-			+ "px", left: (($(window).width() - $("#tiles-new.dialog").width()) / 2) + "px"});});
+		//$("#tiles-new.dialog").data("exit")();
+		$("#new.dialog").hide(); $("#tiles-new.dialog").data("open")();});
 	$("#new.dialog > #content > #sprite.button").click(function(){alert("Not implemented.");});
 	$("#new.dialog > #content > #map.button").click(function(){alert("Not implemented.");});
 	$("#new.dialog > #content > #cancel.button").click(function(){$("#new.dialog").hide(); $("#modal").hide();});
