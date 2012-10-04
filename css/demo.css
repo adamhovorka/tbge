@@ -69,10 +69,10 @@ p {
 #gameborder {
 	margin: auto;
 	width: 736px;
-	padding: 16px;
-	background-color: #111;
+	padding: 20px 16px 8px 16px;
+	background-color: #0d0d0d;
 	border-radius: 16px;
-	box-shadow: 3px 3px 2px #000;
+	box-shadow: 6px 6px 3px #000, inset -1px -1px 10px #000, inset 2px 2px 8px #222;
 }
 
 #top {
@@ -115,4 +115,27 @@ p {
 	width: 64px;
 	margin-right: 64px;
 	background-position: -64px -128px;
+}
+
+#sslbox {
+	height: 32px;
+	width: 160px;
+	margin: auto;
+	margin-top: 8px;
+}
+
+#startbutton {
+	background-image: url(../images/controls.png);
+	height: 32px;
+	width: 64px;
+	float: left;
+	background-position: 0 -192px;
+}
+
+#selectbutton {
+	background-image: url(../images/controls.png);
+	height: 32px;
+	width: 64px;
+	margin-left: 96px;
+	background-position: -64px -192px;
 }

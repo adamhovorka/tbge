@@ -91,6 +91,12 @@ $(function() {
 	// Test onClick event for the "B" button ====----
 	$("#bbutton").click(function(){ alert("You clicked button B!")});
 
+	// Test onClick event for the "start" button ====----
+	$("#startbutton").click(function(){ alert("You clicked the start button!")});
+
+	// Test onClick event for the "select" button ====----
+	$("#selectbutton").click(function(){ alert("You clicked the select button!")});
+
 	// Camera motion onClick event for the D+Pad ====----
 	$("#dpad").click(function(event){
 		var x = Math.round(event.pageX - $(this).offset().left);
