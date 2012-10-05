@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+   - game.html
+   -
+   - Part of the Tile Based Game Engine project
+   -
+   -
+   - Copyright (C) 2012 Exclamation Studios
+   -
+   - Permission is  hereby granted,  free of charge,  to any person  obtaining a
+   - copy of this software and associated documentation files ( the "Software"),
+   - to deal in the Software  without restriction,  including without limitation
+   - the rights to use, copy,  modify,  merge, publish,  distribute, sublicense,
+   - and/or sell  copies  of the Software,  and to  permit  persons to  whom the
+   - Software is furnished to do so, subject to the following conditions:
+   -
+   - The above copyright notice and this  permission notice shall be included in
+   - all copies or substantial portions of the Software.
+   -
+   - THE SOFTWARE IS PROVIDED "AS IS",  WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   - IMPLIED,  INCLUDING BUT NOT  LIMITED TO THE WARRANTIES  OF MERCHANTABILITY,
+   - FITNESS FOR A PARTICULAR  PURPOSE AND  NONINFRINGEMENT.  IN NO  EVENT SHALL
+   - THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,  DAMAGES OR OTHER
+   - LIABILITY,  WHETHER IN AN  ACTION OF CONTRACT,  TORT OR OTHERWISE,  ARISING
+   - FROM,  OUT  OF OR  IN CONNECTION  WITH THE  SOFTWARE  OR THE  USE OR  OTHER
+   - DEALINGS IN THE SOFTWARE.
+   -
+   -
+   - This is the demonstration/testing HTML document. Its content will change as
+   - development goes on - features will be added, etc. 
+  -->
+<html>
+	<head>
+		<title>Tile Based Game Engine</title>
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/ui.css" />
+		<link rel="stylesheet" href="css/code.css" />
+		<link rel="stylesheet" href="css/game.css" />
+		<link rel="stylesheet" href="css/demo.css" />
+
+		<!-- Web Fonts -->
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Press+Start+2P'>
+
+		<!-- Javascript - Libraries -->
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/code.js"></script>
+		<script src="js/game.js"></script>
+		<script src="js/rpgf.js"></script>
+
+		<!-- Javascript - The stuff that actually does stuff... -->
+		<script src="js/demo.js"></script>
+		<script src="js/demo-content.js"></script>
+
+	</head>
+	<body>
+		<!-- "Fork me on GitHub" ribbon -->
+		<a href="https://github.com/adamhovorka/tbge"><img style="position: absolute; top: 0; right: 0; border: 0;" src="images/github-ribbon.png" alt="Fork me on GitHub"></a>
+
+		<!-- Hero unit -->
+		<div id="top">
+			<h1>Tile Based Game Engine<hr /></h1>
+			<div id="gameborder">
+				<div id="dpad"></div>
+				<div id="abbox">
+					<div id="abutton"></div>
+					<div id="bbutton"></div>
+				</div>
+				<div id="game"></div>
+			</div>
+		</div>
+
+		<div id="content">
+			<div id="content-nav">
+				<a id="content-nav-game" href="#">Game</a>
+				<hr />
+				<a id="content-nav-about" href="#">About</a>
+			</div>
+
+			<!-- Demo game help/about -->
+			<div id="content-game">
+				<h2>Demo Game &ndash; <em>Vacation Island</em></h2>
+				<p>Welcome to the beautiful <em>Vacation Island!</em> We hope you enjoy your stay here!</p>
+				<h3>Gameplay</h3>
+				<p>Lorem ipsum dolor sit amet consequetur adisplicing elit.</p>
+				<p>Lorem ipsum dolor sit amet consequetur adisplicing elit.</p>
+			</div>
+
+			<!-- About the project -->
+			<div id="content-about">
+				<h2>About the Project</h2>
+				<p>The <em>Tile Based Game Engine</em> project was started during September of 2012 by some students at the Utah County Academy of Sciences who rode the bus home together.</p>
+			</div>
+		</div>
+	</body>
+</html>
